@@ -19,10 +19,10 @@ private fun mockCustomersList(): MutableList<Customer> {
     return customers
 }
 
-fun expectedCustomersList(): MutableList<Customer> {
-    val expectedcustomers: MutableList<Customer> = mutableListOf()
+fun expectedCustomersList(): MutableList<String> {
+    val expectedcustomers: MutableList<String> = mutableListOf()
     expectedCustomerFile.readLines().forEach {
-        expectedcustomers.add(Gson().fromJson(it, Customer::class.java))
+        expectedcustomers.add(it)
     }
     return expectedcustomers
 }
