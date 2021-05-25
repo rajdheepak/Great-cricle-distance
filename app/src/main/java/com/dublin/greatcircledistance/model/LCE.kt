@@ -10,6 +10,6 @@ package com.dublin.greatcircledistance.model
 
 sealed class LCE {
     object Loading : LCE()
-    data class Content(val customers: List<Customer>) : LCE()
+    data class Content(val customers: List<String>) : LCE()
     data class Error(val errorMessage: String) : LCE()
 }

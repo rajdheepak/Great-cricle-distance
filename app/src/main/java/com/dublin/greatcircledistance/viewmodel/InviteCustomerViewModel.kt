@@ -25,7 +25,7 @@ class InviteCustomerViewModel(private val customerListRepository: CustomerListRe
                         customersWithinRadius.add(it)
                     }
                 }
-                LCE.Content(customersWithinRadius)
+                LCE.Content(customersWithinRadius.sortedBy { it.userId }.map { "UserID : ${it.userId} Name : ${it.name}" })
             }
             is Data.Error -> LCE.Error(it.errorMessage)
             Data.Empty -> LCE.Loading
